@@ -58,6 +58,7 @@ main{
     grid-auto-rows: min-content;
     gap: 5%;
     margin: 5rem 0 0 0;
+    transition: 0.4s;
 }
 li{
     text-decoration: none;
@@ -130,6 +131,14 @@ input{
     color: var(--base-color);
     border-radius: 0.5rem;
 
+}
+
+.symbols-container{
+    display: none;
+}
+
+.fa-plus:hover{
+    transform: scale(1.5);
 }
 
 
