@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     calculate.addEventListener("click", () => {
         show.value = quadEquation(first_term.value, second_term.value, third_term.value, x.value);
+        const displaying = document.getElementById('Quadratic-Showcase');
+
+        displaying.textContent = first_term.value + (x.value) + "^2";
     } 
     );
 
