@@ -39,8 +39,26 @@
     top: -5rem;
     left: -5rem;
     right: 0;
-    position: relative;
 
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.nav-link-holder{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 1rem 0.5rem 0;
+}
+
+a.nav-links{
+    text-decoration: none;
+}
+.nav-links{
+    color: var(--base-color);
+    font-family: 'Poppins';
 }
 body{
     
@@ -57,7 +75,7 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: min-content;
     gap: 5%;
-    margin: 5rem 0 0 0;
+    margin: 0rem 0 0 0;
     transition: 0.4s;
 }
 li{
@@ -69,6 +87,8 @@ li{
 ul{
     margin: 0;
 }
+
+
 
 .operations{
     display: inline-block;
