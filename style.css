@@ -142,6 +142,10 @@ input{
     font-family: 'IBM-Small';
     margin: 1rem;
 }
+.text-box{
+    margin: 1rem;
+    width: 80%;
+}
 
 .button-container{
     justify-content: center;
@@ -153,9 +157,7 @@ input{
 
 }
 
-.symbols-container{
-    display: none;
-}
+
 
 .fa-plus:hover{
     transform: scale(1.5);

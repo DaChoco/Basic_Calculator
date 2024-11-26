@@ -1,9 +1,16 @@
-var number1 = 0, number2 = 0;
+var number1, number2;
 window.onload = function(){
     console.log('Loaded');
+
+    let number1 = document.getElementById("num1");
+    let number2 = document.getElementById("num2");
+
+    number1.value = sessionStorage.getItem("Num1");
+    number2.value = sessionStorage.getItem("Num2");
 }
 
-document.addEventListener('DOMContentLoaded', () =>{   
+document.addEventListener('DOMContentLoaded', () =>{ 
+    var toggle = false;  
     const calculate = document.getElementById('C');
     let mode = "addition";
 
@@ -17,33 +24,73 @@ document.addEventListener('DOMContentLoaded', () =>{
     const multiplyMode = document.getElementById('times')
 
     addMode.addEventListener("click", ()=> {
-        mode = "addition";
-        let symbol = document.getElementById('SubSn');
-        symbol.style.display = 'block';
+        
+        let symbol = document.getElementById('addSn');
+        if (toggle == false){
+            symbol.style.transform = 'scale(1.5)';
+            toggle = true;
+            mode = "addition";
+        }
+        else{
+            symbol.style.transform = 'scale(1)';
+            toggle = false;
+            mode = "";
+        }
     });
+
     subtractMode.addEventListener("click", ()=> {
-        mode = "subtraction"
+        
         let symbol = document.getElementById('SubSn');
-        symbol.style.display = 'block';
-        
-        
+        if (toggle == false){
+            symbol.style.transform = 'scale(1.5)';
+            toggle = true;
+            mode = "subtraction"
+        }
+        else{
+            symbol.style.transform = 'scale(1)';
+            toggle = false;
+            mode = "";
+        }    
     });
+
     divisionMode.addEventListener("click", ()=> {
-        mode = "division";
-        let symbol = document.getElementById('SubSn');
-        symbol.style.display = 'block';
+        
+        let symbol = document.getElementById('DivSn');
+        if (toggle == false){
+            symbol.style.transform = 'scale(1.5)';
+            toggle = true;
+            mode = "division";
+        }
+        else{
+            symbol.style.transform = 'scale(1)';
+            toggle = false;
+            mode = "";
+        }
     });
+
     multiplyMode.addEventListener("click", ()=> {
-        mode = "times";
-        let symbol = document.getElementById('SubSn');
-        symbol.style.display = 'block';
-    })
+        
+        let symbol = document.getElementById('MulSn');
+        if (toggle == false){
+            symbol.style.transform = 'scale(1.5)';
+            toggle = true;
+            mode = "times";
+        }
+        else{
+            symbol.style.transform = 'scale(1)';
+            toggle = false;
+            mode = "";
+        }
+    });
 
 
 
     calculate.addEventListener("click", () =>{ //If they click the button to calculate what is needed
         var numVal1 = Number(number1.value);
         var numVal2 = Number(number2.value);
+
+        sessionStorage.setItem("Num1", number1.value);
+        sessionStorage.setItem("Num2", number2.value);
 
         if (mode == "addition"){
             addition(numVal1, numVal2);
