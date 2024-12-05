@@ -9,6 +9,12 @@ window.onload = function(){
     number2.value = sessionStorage.getItem("Num2");
 }
 
+function toggleDarkMode(){
+    let isDark = document.body.classList.toggle('darkmode');
+
+    localStorage.setItem('darkMode', isDark ? "enabled" : "disabled");
+}
+
 document.addEventListener('DOMContentLoaded', () =>{ 
     var toggle = false;  
     const calculate = document.getElementById('C');
@@ -16,6 +22,14 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     number1 = document.getElementById('num1');
     number2 = document.getElementById('num2');
+
+    //dark mode
+    let lightdark = document.getElementById("light-dark-toggle");
+    lightdark.addEventListener("click", toggleDarkMode);
+    if (localStorage.getItem("darkMode") === 'enabled'){
+        document.body.classList.add = "darkmode";
+    }
+    
 
     //Selecting which mode we are in
     const addMode = document.getElementById('add');

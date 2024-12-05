@@ -16,18 +16,32 @@
 
 :root{
     --base-color: #e9ebef;
+    --dim-base-color: #c7d0d6;
     --side-color: #18567a;
     --heading-text:  #010e15;
     --secondary-text: #121923;
     --dark-accent: #0b1011;
 }
 .darkmode{
-    --base-color: #3f4042;
-    --side-color: #0b2e42;
+    background-color: #3f4042 ;
+    --base-color: #bdc0c7;
+    --side-color: #ecf2f6;
+    --dim-base-color: #62686c;
     --heading-text:  #cfcfe0;
     --secondary-text: #ccd6e5;
     --dark-accent: #0b1011;
 
+}
+.icon-color{
+    color: var(--base-color);
+    margin: 1rem 0 1rem 1rem;
+    
+    
+}
+.icon-head-holder{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }
 
 .topbar{
@@ -63,6 +77,7 @@ a.nav-links{
 body{
     
     margin: 5rem;
+    background-color: #e9ebef;
 }
 
 .head-style{
@@ -119,7 +134,7 @@ input{
 }
 
 .calculator-container{
-    background-color: var(--base-color);
+    background-color: var(--dim-base-color);
     color: var(--heading-text);
     font-family: 'IBM-Big';
     height: auto;

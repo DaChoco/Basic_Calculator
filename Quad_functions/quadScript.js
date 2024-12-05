@@ -27,7 +27,19 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     clear.addEventListener("click", clearing);
 
+    //dark mode
+    let lightdark = document.getElementById("light-dark-toggle");
+    lightdark.addEventListener("click", toggleDarkMode);
+    if (localStorage.getItem("darkMode") === 'enabled'){
+        document.body.classList.add = "darkmode";
+    }
 } )
+
+function toggleDarkMode(){
+    let isDark = document.body.classList.toggle('darkmode');
+
+    localStorage.setItem('darkMode', isDark ? "enabled" : "disabled");
+}
 
 function quadEquation(a, b, c, x){
 
